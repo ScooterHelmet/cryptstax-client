@@ -26,6 +26,9 @@ ADD . $NODE
 # Build production static files to be served
 RUN npm run build 
 
+# Clean up
+RUN rm -rf ./src
+
 # Run production
 CMD ["serve","-s","build"]
 
